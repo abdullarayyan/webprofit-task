@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WebProfit</title>
+    <link rel="stylesheet" href="../assets/css/contact.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+</head>
+<body>
+
+
+<!--all sections page index-->
+<section class="content">
+    <!--        navebar menu-->
+    <nav class="navbar">
+        <div class="logo">
+            <div><img src="../assets/img/logoC.png"></div>
+            <div></div>
+
+            <div class="link"><a href="#">WHAT WE DO</a></div>
+            <div class="link"><a href="#">WHO WE ARE</a></div>
+            <div class="link"><a href="#">HOW WE THINK</a></div>
+            <div class="link"><a href="#">CONTACT</a></div>
+            <a class="btn" href="#">LETS TALK</a>
+        </div>
+    </nav>
+    <nav class="navbar-a">
+        <div class="logo-a"><img src="../assets/img/logoC.png">
+            <a href="#">LETS TALK</a>
+            <div><img id="menu-a" src="../assets/img/menu.PNG"></div>
+        </div>
+    </nav>
+    <nav class="navbar-b">
+        <div class="logo-b">
+            <img id="logo" src="../assets/img/logoC.png">
+            <img id="menu-b" src="../assets/img/menu.PNG">
+        </div>
+    </nav>
+<!--register form-->
+    <section class="form">
+        <div class="container">
+            <div class="caption">
+
+                <h1>Let's talk</h1>
+                <pre id="caption-a">Fill out the form and we'll come to you,<br/>or give us a call to get in touch directly.</pre>
+                <p id="caption-b">Fill out the form and we'll come to you,or give us a call to get in touch directly.</p>
+            </div>
+            <div class="form">
+                <div class="form-register">
+                    <div class="Row">
+                        <div class="column-a">
+                            <label for="first_name">First name<span>*</span></label><br>
+                            <input type="text" class="user" id="first_name" name="first_name" onblur="Input(0)"><br>
+                        </div>
+                        <div class="column-b">
+                            <label for="last_name">Last name<span>*</span></label><br>
+                            <input type="text" class="user" id="last_name" name="last_name" onblur="Input(1)"><br>
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <div class="column-a">
+                            <label for="email">Email<span>*</span></label><br>
+                            <input type="email" id="email" name="email" class="user" onblur="Input(5)" required><br>
+                        </div>
+                        <div class="column-b">
+                            <label for="phone">Phone number<span>*</span></label><br>
+                            <input type="tel" class="user" id="phone" name="phone" onblur="Input(6)"><br>
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <div class="column-a">
+                            <label for="company_name">Company name<span>*</span></label><br>
+                            <input type="text" class="user" id="company_name" name="company_name" onblur="Input(2)"><br>
+                        </div>
+                        <div class="column-b">
+                            <label for="company_website">Company website<span>*</span></label>
+                            <input type="text" class="user" id="company_website" name="company_website" onblur="Input(3)"><br>
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <div class="column-a">
+                            <label for="jop_title">Jop title<span>*</span></label><br>
+                            <input type="text" class="user" id="jop_title" name="jop_title" onblur="Input(4)"><br>
+                        </div>
+                        <div class="column-b">
+                            <label for="employees">Company size<span>*</span></label><br>
+                            <select name="employees" id="employees" onblur="checkError()">
+                                <option value=""><spam>Please select</spam></option>
+                                <option value="1-10 Employees">1-10 Employees</option>
+                                <option value="11-50 Employees">11-50 Employees</option>
+                                <option value="51-250 Employees">51-250 Employees</option>
+                                <option value="251-1k Employees">251-1k Employees</option>
+                                <option value="1k-5k Employees">1k-5k Employees</option>
+                                <option value="5k-10k Employees">5k-10k Employees</option>
+                                <option value="10k-50k Employees">10k-50k Employees</option>
+                                <option value="50k-100k Employees">50k-100k Employees</option>
+                                <option value="100k+ Employees">100k+ Employees</option>
+                            </select>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <p>Anything else we should know? (Optional)</p>
+                        <textarea></textarea><br />
+                        <a id="submit">REQUEST A CALL BACK</a><br/>
+                        <div class="privacy">
+                            <div id="term">
+                                <pre><p>protected by re<span><strong>CAPTCHA</strong></span></p></pre>
+                                <pre><a>Privacy</a>-<a>Terms</a></pre>
+                            </div>
+                            <div id="logo1"></div>
+                        </div>
+                        <p id="note">We respect your privacy</p><br />
+                    </div>
+                </div>
+            </div>
+                    <div class="type" style="
+                            padding-top: 100px;
+                            margin-top: -114px;">
+                <div class="type1">
+                    <h1>SYDNEY</h1>
+                    <p>
+                        L28, 161 Castlereagh Street<br /> Sydney
+                        <br /> NSW 2000<br /><br /> P: +61 2 8806 6800</p>
+                </div>
+                <br />
+                <div class="type2">
+                    <h1>MELBOURNE</h1>
+                    <p>
+                        L1, 145 Russell Street<br /> Melbourne
+                        <br /> VIC 3000<br /><br /> P: +61 3 8488 7821
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--partner section-->
+    <section class="partners">
+        <div>
+            <p>We are premier partners with</p>
+            <img src="../assets/img/partnersLogos4.png">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="
+    padding-top: 50px;
+">
+        <div class="content">
+            <div class="row c_row esp_row" >
+                <div class="fLogoWr">
+                    <img src="../assets/img/fLogoLight.png">
+                </div>
+                <div class="fCtWr">
+                    <p>
+                        <span>
+                             &copy; 2020 Webprofits. All Rights Reserved.
+                            <a href="#">Privacy Policy</a>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</section>
+
+<!--showmenueclass-->
+<div class="mm">
+    <img src="../assets/img/logo.png"><br /><br />
+    <a id="close" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div>
+        <a href="#">what we do</a>
+        <a href="#">who we are</a>
+        <a href="#">how we think</a>
+        <a href="#">contact</a>
+    </div>
+</div>
+<script src="../assets/js/script.js"></script>
+<script src="../assets/js/contact.js"></script>
+</body>
+</html>
