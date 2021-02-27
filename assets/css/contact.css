@@ -384,32 +384,6 @@ footer .content{
     margin-top: 35px;
 }
 
-/*.column-a,*/
-/*.column-b.error input {*/
-/*    border-color: #e74c3c;*/
-/*}*/
-
-/*.column-a,*/
-/*.column-b i{*/
-/*    visibility: hidden;*/
-/*    position: absolute;*/
-/*    top: 40px;*/
-/*    right: 10px;*/
-/*}*/
-
-/*.column-a,*/
-/*.column-b.success i.fa-check-circle {*/
-/*    color: #2ecc71;*/
-/*    visibility: visible;*/
-/*}*/
-
-/*.column-a,*/
-/*.column-b.error i.fa-times-circle{*/
-/*    color: #e74c3c;*/
-/*    visibility: visible;*/
-/*}*/
-
-
 .column-a,
 .column-b {
     width: 50%;
@@ -428,65 +402,38 @@ select {
     padding-left: 20px;
 }
 
-/*.column-a.success input{*/
-/*    border-color: #2ecc71;*/
 
-/*}*/
-/*.column-b.success input{*/
-/*    border-color: #2ecc71;*/
-
-/*}*/
-/*.column-a.error input{*/
-/*    border-color: #e74c3c;*/
-
-/*}*/
-/*.column-b.error input{*/
-/*    border-color: #e74c3c;*/
-
-/*}*/
-
-/*.column-a i,.column-b i{*/
-/*    visibility: hidden;*/
-/*    position: absolute;*/
-/*    top: 40px;*/
-/*    right: 10px;*/
-/*}*/
-
-/*.column-a.success i.fa-check-circle{*/
-/*    color: #2ecc71;*/
-/*    visibility: hidden;*/
-/*}*/
-
-/*.column-a.error i.fa-times-circle{*/
-/*    color: #e74c3c;*/
-/*    visibility: visible;*/
-/*}*/
 
 .column-a span,
 .column-b span {
     color: red;
 }
 
-.notvaild {
-    border: 1px solid red;
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAUCAMAAADImI+JAAAAY1BMVEUAAADTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzwqts+AAAAIHRSTlMAuwg6opJsqg7e2RIkRNaxf14sxJx3G9DKmFBKi1YytseQe/sAAADxSURBVCjPhdJZrsMgDEBRG8xMGDJPbbr/VT5U9aU/pLl/iCMsWQCpJY9wxrwkglqEmDg7j3oTeFThQHYe2lNyMrOqQp6jxX+pubBmkVWofVa2k/4t+WKnZWuhnssqoCy3rLxnRaPhqvFBRWpohZ1E4+A691CdeDQSi9Pwq3FLChFV4hpu4ur1MsnDbS0VKN0d00+p5i7uq2c3gwWSXAcV5U/p+B6m5BmncMjntWRbH2bBGeiVQpeuJHPNYozg+r3PaIocq9A3vbX9Z89jVqYb1irMezD95gA+Eg2KKuxxotV9B8g4Yx0e8fy3JdfsGGvuDwFVDHV06goRAAAAAElFTkSuQmCC");
+.not-valid {
+    border: 1px solid var(--primary-color);
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAUCAMAAADImI+JAAAAY1BMVEUAAADTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzwqts+AAAAIHRSTlMAuwg6opJsqg7e2RIkRNaxf14sxJx3G9DKmFBKi1YytseQe/sAAADxSURBVCjPhdJZrsMgDEBRG8xMGDJPbbr/VT5U9aU/pLl/iCMsWQCpJY9wxrwkglqEmDg7j3oTeFThQHYe2lNyMrOqQp6jxX+pubBmkVWofVa2k/4t+WKnZWuhnssqoCy3rLxnRaPhqvFBRWpohZ1E4+A691CdeDQSi9Pwq3FLChFV4hpu4ur1MsnDbS0VKN0d00+p5i7uq2c3gwWSXAcV5U/p+B6m5BmncMjntWRbH2bBGeiVQpeuJHPNYozg+r3PaIocq9A3vbX9Z89jVqYb1irMezD95gA+Eg2KKuxxotV9B8g4Yx0e8fy3JdfsGGvuDwFVDHV06goRAAAAAElFTkSuQmCC);
     background-repeat: no-repeat;
+    background-position: right center;
     background-size: 20px 10px;
-    animation-name: transfer;
-    animation-duration: .2s;
-    animation-fill-mode: both;
 }
-
+.not-valid-select{
+    border: 1px solid var(--primary-color);
+    /*background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAUCAMAAADImI+JAAAAY1BMVEUAAADTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzTPVzwqts+AAAAIHRSTlMAuwg6opJsqg7e2RIkRNaxf14sxJx3G9DKmFBKi1YytseQe/sAAADxSURBVCjPhdJZrsMgDEBRG8xMGDJPbbr/VT5U9aU/pLl/iCMsWQCpJY9wxrwkglqEmDg7j3oTeFThQHYe2lNyMrOqQp6jxX+pubBmkVWofVa2k/4t+WKnZWuhnssqoCy3rLxnRaPhqvFBRWpohZ1E4+A691CdeDQSi9Pwq3FLChFV4hpu4ur1MsnDbS0VKN0d00+p5i7uq2c3gwWSXAcV5U/p+B6m5BmncMjntWRbH2bBGeiVQpeuJHPNYozg+r3PaIocq9A3vbX9Z89jVqYb1irMezD95gA+Eg2KKuxxotV9B8g4Yx0e8fy3JdfsGGvuDwFVDHV06goRAAAAAElFTkSuQmCC);*/
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 20px 10px;
+}
 .valid {
+
     width: 90%;
     height: 50%;
     font-size: 15px;
     font-weight: bold;
-    border: 1px solid black;
 }
-element.style{
-    background-color: black;
-}
+/*element.style{*/
+/*    background-color: black;*/
+/*}*/
+
 @keyframes transfer {
     from {
         background-position: left top;

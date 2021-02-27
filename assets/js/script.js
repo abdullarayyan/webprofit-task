@@ -1,6 +1,3 @@
-
-
-
 var menu_a = document.querySelector('#menu-a');
 var menu_b = document.querySelector('#menu-b');
 var mm = document.querySelector('.mm');
@@ -26,6 +23,7 @@ function showblock() {
     mm.style.height = "100%";
 }
 
+//animation text
 var typed = new Typed(".typing",{
     strings:["Logitech's", "Canon's", "LJ Hooker's", "Bellamy's", "Nimble's"],
     typeSpeed:100,
