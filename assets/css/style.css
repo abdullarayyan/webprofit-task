@@ -582,6 +582,7 @@ footer .content{
 
     .navbar{
         display:none;
+        visibility: hidden;
     }
 
     .navbar-a{
