@@ -4,9 +4,9 @@ const email = document.getElementsByClassName("email")[0]
 const phone_number = document.getElementsByClassName("phone")[0]
 const company_name = document.getElementsByClassName("company_name")[0]
 const company_website = document.getElementsByClassName('company_website')[0]
-const jop_title = document.getElementsByClassName("jop_title")[0]
+const job_title = document.getElementsByClassName("job_title")[0]
 const selectEmployees = document.getElementsByClassName("employees")[0]
-const user = [first_name, last_name, email, phone_number, company_name, company_website, jop_title,selectEmployees]
+const user = [first_name, last_name, email, phone_number, company_name, company_website, job_title,selectEmployees]
 
 first_name.onblur = function (e){
     const validationName =  /^[a-zA-Z ]{2,30}$/;
@@ -73,13 +73,13 @@ company_website.onblur = function (e){
     }
 }
 
-jop_title.onblur = function (e){
+job_title.onblur = function (e){
     const validationName =  /^[a-zA-Z ]{2,30}$/;
 
     if(!validationName.test(e.target.value)){
-        jop_title.classList.add('not-valid')
+        job_title.classList.add('not-valid')
     } else {
-        jop_title.classList.replace('not-valid','valid')
+        job_title.classList.replace('not-valid','valid')
     }
 }
 
