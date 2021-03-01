@@ -1,5 +1,5 @@
 //declare variable
-const form = document.getElementById('form');
+let form = document.getElementById('form');
 const first_name = document.getElementById('first_name')[0]
 const last_name = document.getElementById("last_name")[0]
 const email = document.getElementById("email")[0]
@@ -26,11 +26,11 @@ const validationUrl = new RegExp('^(https?:\\/\\/)?'+ // protocol
 
 // onblur function validation
 form.addEventListener("blur", function (event){
-     //validation fname,lname,job_title and coSize
+     //validation fname ,lastnme ,coSize and job_title
      if(event.target.id=='first_name'||
          event.target.id=='last_name'||
-         event.target.id=='job_title'||
-         event.target.id=='company_name'){
+         event.target.id=='company_name'||
+         event.target.id=='job_title'){
         if(!validationName.test(event.target.value)){
             // event.target.style.background='red'
             event.target.className=('not-valid')
@@ -39,7 +39,6 @@ form.addEventListener("blur", function (event){
             event.target.className=('valid');
         }
      }
-
      //validation email
      else if(event.target.id=='email'){
          if(!validationEmail.test(event.target.value)){
