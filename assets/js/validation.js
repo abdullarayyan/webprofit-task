@@ -1,15 +1,14 @@
 //declare variable
-let form = document.getElementById('form');
-const first_name = document.getElementById('first_name')[0]
-const last_name = document.getElementById("last_name")[0]
-const email = document.getElementById("email")[0]
-const phone_number = document.getElementById("phone")[0]
-const company_name = document.getElementById("company_name")[0]
-const company_website = document.getElementById('company_website')[0]
-const job_title = document.getElementById("job_title")[0]
-const employees = document.getElementById("employees")[0]
+const form = document.getElementById('form')
+const first_name = document.getElementById('first_name')
+const last_name = document.getElementById("last_name")
+const email = document.getElementById("email")
+const phone_number = document.getElementById("phone")
+const company_name = document.getElementById("company_name")
+const company_website = document.getElementById('company_website')
+const job_title = document.getElementById("job_title")
+const employees = document.getElementById("employees")
 
-const user = [first_name, last_name, email, phone_number, company_name, company_website, job_title,employees]
 //declare regular expression
 const validationName =  /^[a-zA-Z ]{2,30}$/; //regular expression for name & title
 //regular expression for email
@@ -26,52 +25,56 @@ const validationUrl = new RegExp('^(https?:\\/\\/)?'+ // protocol
 
 // onblur function validation
 form.addEventListener("blur", function (event){
-     //validation fname ,lastnme ,coSize and job_title
+    event.target.className=('valid')
+    //validation fname ,lastnme ,coSize and job_title
      if(event.target.id=='first_name'||
          event.target.id=='last_name'||
          event.target.id=='company_name'||
          event.target.id=='job_title'){
         if(!validationName.test(event.target.value)){
-            // event.target.style.background='red'
             event.target.className=('not-valid')
-            // console.log(event.target.className)
-        } else {
-            event.target.className=('valid');
         }
      }
      //validation email
      else if(event.target.id=='email'){
          if(!validationEmail.test(event.target.value)){
              event.target.className=('not-valid')
-         } else {
-             event.target.className=('valid')
          }
      }
      //validation phone
      else if(event.target.id=='phone'){
          if(!validationPhone.test(event.target.value)){
              event.target.className=('not-valid')
-         } else {
-             event.target.className=('valid')
          }
      }
      //validation company_website
      else if(event.target.id=='company_website'){
          if(!validationUrl.test(event.target.value)){
              event.target.className=('not-valid')
-         } else {
-             event.target.className=('valid')
          }
      }
      //validation option employees selector
      else if(event.target.id=='employees'){
          const valSelectEmp = employees.value
          // console.log(valSelectEmp)
-         if(!valSelectEmp=='disabled selected'){
+         if(valSelectEmp==='disabled selected'){// disabled selected mean: values select option
              event.target.className=('not-valid-select')
-         } else {
-             event.target.className=('valid')
          }
      }
  },true);
+
+const user = [first_name, last_name, email, phone_number, company_name, company_website, job_title,employees] //array of all field form
+const btn = document.getElementById("submit");
+btn.addEventListener('click', () => {//onclick button submit
+    user.forEach(function (item) {//foreach of all field
+        // console.log(item.value)
+        const inputValue = item.value    //give a default value at all element
+        if (inputValue === '') {
+            item.classList.add('not-valid')
+        }else if(inputValue === 'disabled selected'){
+            item.classList.add('not-valid-select')
+        }
+    });
+});
+
 

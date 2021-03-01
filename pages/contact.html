@@ -48,28 +48,28 @@
                 <pre id="caption-a">Fill out the form and we'll come to you,<br/>or give us a call to get in touch directly.</pre>
 <!--                <p id="caption-b">Fill out the form and we'll come to you,or give us a call to get in touch directly.</p>-->
             </div>
-            <div class="form"  style="padding-top: 80px; margin-bottom: 30px">
+            <div class="form" style="padding-top: 80px; margin-bottom: 30px">
                 <div class="form-register">
-            <div id="form" >
+            <form id="form" >
                     <div class="Row">
                         <div class="column-a">
                             <label >First name<span>*</span></label><br>
-                            <input type="text" id="first_name" ><br>
+                            <input type="text" id="first_name" name="first_name"><br>
                         </div>
                         <div class="column-b">
                             <label>Last name<span>*</span></label><br>
 <!--                            <input type= "name" class="firstName" type="text">-->
-                            <input type="text" id="last_name" ><br>
+                            <input type="text" id="last_name" name="last_name"><br>
                         </div>
                     </div>
                     <div class="Row">
                         <div class="column-a">
                             <label>Email<span>*</span></label><br>
-                            <input type="email" id="email"  required ><br>
+                            <input type="email" id="email"  name="email"  ><br>
                         </div>
                         <div class="column-b">
                             <label>Phone number<span>*</span></label><br>
-                            <input type="tel" id="phone" ><br>
+                            <input type="tel" id="phone" name="phone"><br>
                         </div>
                     </div>
                     <div class="Row">
@@ -90,7 +90,7 @@
                         <div class="column-b">
                             <label >Company size<span>*</span></label><br>
                             <select name="employees" id="employees" >
-                                <option value="disabled selected"><spam>Please select</spam></option>
+                                <option value="disabled selected" ><spam>Please select</spam></option>
                                 <option value="1-10 Employees">1-10 Employees</option>
                                 <option value="11-50 Employees">11-50 Employees</option>
                                 <option value="51-250 Employees">51-250 Employees</option>
@@ -108,6 +108,7 @@
                         <p>Anything else we should know? (Optional)</p>
                         <textarea></textarea><br />
                         <a id="submit" >REQUEST A CALL BACK</a><br/>
+<!--                        <button id="submit">eeeeeeeeeeeeeee</button>-->
                         <div class="privacy">
                             <div id="term">
                                 <pre><p>protected by re<span><strong>CAPTCHA</strong></span></p></pre>
@@ -117,7 +118,7 @@
                         </div>
                         <p id="note">We respect your privacy</p><br />
                     </div>
-            </div>
+            </form>
                 </div>
             </div>
             <div class="type" style="
