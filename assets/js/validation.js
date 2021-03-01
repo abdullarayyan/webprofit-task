@@ -1,5 +1,5 @@
 //declare variable
-let form = document.getElementById('form');
+const form = document.getElementById('form');
 const first_name = document.getElementById('first_name')[0]
 const last_name = document.getElementById("last_name")[0]
 const email = document.getElementById("email")[0]
@@ -26,8 +26,11 @@ const validationUrl = new RegExp('^(https?:\\/\\/)?'+ // protocol
 
 // onblur function validation
 form.addEventListener("blur", function (event){
-     //validation fname
-     if(event.target.id=='first_name'){
+     //validation fname,lname,job_title and coSize
+     if(event.target.id=='first_name'||
+         event.target.id=='last_name'||
+         event.target.id=='job_title'||
+         event.target.id=='company_name'){
         if(!validationName.test(event.target.value)){
             // event.target.style.background='red'
             event.target.className=('not-valid')
@@ -36,14 +39,7 @@ form.addEventListener("blur", function (event){
             event.target.className=('valid');
         }
      }
-     //validation lname
-     else if(event.target.id=='last_name'){
-        if(!validationName.test(event.target.value)){
-            event.target.className=('not-valid')
-        } else {
-            event.target.className=('valid')
-        }
-    }
+
      //validation email
      else if(event.target.id=='email'){
          if(!validationEmail.test(event.target.value)){
@@ -60,25 +56,9 @@ form.addEventListener("blur", function (event){
              event.target.className=('valid')
          }
      }
-     //validation company_name
-     else if(event.target.id=='company_name'){
-         if(!validationName.test(event.target.value)){
-             event.target.className=('not-valid')
-         } else {
-             event.target.className=('valid')
-         }
-     }
      //validation company_website
      else if(event.target.id=='company_website'){
          if(!validationUrl.test(event.target.value)){
-             event.target.className=('not-valid')
-         } else {
-             event.target.className=('valid')
-         }
-     }
-     //validation jobtitle
-     else if(event.target.id=='job_title'){
-         if(!validationName.test(event.target.value)){
              event.target.className=('not-valid')
          } else {
              event.target.className=('valid')
