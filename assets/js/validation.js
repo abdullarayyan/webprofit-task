@@ -1,107 +1,98 @@
-const first_name = document.getElementsByClassName('first_name')[0]
-const last_name = document.getElementsByClassName("last_name")[0]
-const email = document.getElementsByClassName("email")[0]
-const phone_number = document.getElementsByClassName("phone")[0]
-const company_name = document.getElementsByClassName("company_name")[0]
-const company_website = document.getElementsByClassName('company_website')[0]
-const job_title = document.getElementsByClassName("job_title")[0]
-const selectEmployees = document.getElementsByClassName("employees")[0]
-const user = [first_name, last_name, email, phone_number, company_name, company_website, job_title,selectEmployees]
+//declare variable
+let form = document.getElementById('form');
+const first_name = document.getElementById('first_name')[0]
+const last_name = document.getElementById("last_name")[0]
+const email = document.getElementById("email")[0]
+const phone_number = document.getElementById("phone")[0]
+const company_name = document.getElementById("company_name")[0]
+const company_website = document.getElementById('company_website')[0]
+const job_title = document.getElementById("job_title")[0]
+const employees = document.getElementById("employees")[0]
 
-first_name.onblur = function (e){
-    const validationName =  /^[a-zA-Z ]{2,30}$/;
+const user = [first_name, last_name, email, phone_number, company_name, company_website, job_title,employees]
+//declare regular expression
+const validationName =  /^[a-zA-Z ]{2,30}$/; //regular expression for name & title
+//regular expression for email
+const validationEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const validationPhone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im; //regular expression for mobile_number
+//regular expression for Url website
+const validationUrl = new RegExp('^(https?:\\/\\/)?'+ // protocol
+    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+// console.log(form.classList)
 
-    if(!validationName.test(e.target.value)){
-        first_name.classList.add('not-valid')
-    } else {
-        first_name.classList.replace('not-valid','valid')
-    }
-}
-
-last_name.onblur = function (e){
-    const validationName =  /^[a-zA-Z ]{2,30}$/;
-
-    if(!validationName.test(e.target.value)){
-        last_name.classList.add('not-valid')
-    } else {
-        last_name.classList.replace('not-valid','valid')
-    }
-}
-
-email.onblur = function (e){
-    const validationEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    if(!validationEmail.test(e.target.value)){
-        email.classList.add('not-valid')
-    }else {
-        email.classList.replace('not-valid','valid')
-    }
-}
-
-phone_number.onblur = function (e){
-    const validationPhone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-
-    if(!validationPhone.test(e.target.value)){
-        phone_number.classList.add('not-valid')
-    }else {
-        phone_number.classList.replace('not-valid','valid')
-    }
-}
-
-company_name.onblur = function (e){
-    const validationName =  /^[a-zA-Z ]{2,30}$/;
-
-    if(!validationName.test(e.target.value)){
-        company_name.classList.add('not-valid')
-    } else {
-        company_name.classList.replace('not-valid','valid')
-    }
-}
-
-company_website.onblur = function (e){
-    const validationUrl = new RegExp('^(https?:\\/\\/)?'+ // protocol
-        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
-        '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
-        '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-        '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
-
-    if(!validationUrl.test(e.target.value)){
-        company_website.classList.add('not-valid')
-    }else{
-        company_website.classList.replace('not-valid','valid')
-    }
-}
-
-job_title.onblur = function (e){
-    const validationName =  /^[a-zA-Z ]{2,30}$/;
-
-    if(!validationName.test(e.target.value)){
-        job_title.classList.add('not-valid')
-    } else {
-        job_title.classList.replace('not-valid','valid')
-    }
-}
-
-selectEmployees.onblur =function (e){
-    const valSelectEmp = selectEmployees.value
-        // console.log(valSelectEmp)
-    if(valSelectEmp==='disabled selected'){
-        selectEmployees.classList.add('not-valid-select')
-    } else {
-        selectEmployees.classList.replace('not-valid-select','valid')
-    }
-}
-
-const btn = document.getElementById("submit");
-btn.addEventListener('click', () => {
-    user.forEach(function (item) {
-        const x = item.value
-        if (x === '') {
-            item.classList.add('not-valid')
-        }else if(x === 'disabled selected' ){
-            item.classList.add('not-valid-select')
+// onblur function validation
+form.addEventListener("blur", function (event){
+     //validation fname
+     if(event.target.id=='first_name'){
+        if(!validationName.test(event.target.value)){
+            // event.target.style.background='red'
+            event.target.className=('not-valid')
+            // console.log(event.target.className)
+        } else {
+            event.target.className=('valid');
         }
-         // console.log(item.lastChild)
-    });
-});
+     }
+     //validation lname
+     else if(event.target.id=='last_name'){
+        if(!validationName.test(event.target.value)){
+            event.target.className=('not-valid')
+        } else {
+            event.target.className=('valid')
+        }
+    }
+     //validation email
+     else if(event.target.id=='email'){
+         if(!validationEmail.test(event.target.value)){
+             event.target.className=('not-valid')
+         } else {
+             event.target.className=('valid')
+         }
+     }
+     //validation phone
+     else if(event.target.id=='phone'){
+         if(!validationPhone.test(event.target.value)){
+             event.target.className=('not-valid')
+         } else {
+             event.target.className=('valid')
+         }
+     }
+     //validation company_name
+     else if(event.target.id=='company_name'){
+         if(!validationName.test(event.target.value)){
+             event.target.className=('not-valid')
+         } else {
+             event.target.className=('valid')
+         }
+     }
+     //validation company_website
+     else if(event.target.id=='company_website'){
+         if(!validationUrl.test(event.target.value)){
+             event.target.className=('not-valid')
+         } else {
+             event.target.className=('valid')
+         }
+     }
+     //validation jobtitle
+     else if(event.target.id=='job_title'){
+         if(!validationName.test(event.target.value)){
+             event.target.className=('not-valid')
+         } else {
+             event.target.className=('valid')
+         }
+     }
+     //validation option employees selector
+     else if(event.target.id=='employees'){
+         const valSelectEmp = employees.value
+         // console.log(valSelectEmp)
+         if(!valSelectEmp=='disabled selected'){
+             event.target.className=('not-valid-select')
+         } else {
+             event.target.className=('valid')
+         }
+     }
+ },true);
+

@@ -662,9 +662,11 @@ select {
         display: none;
     }
     .navbar-a {
+        /*visibility: hidden;*/
         display: none;
     }
     .navbar-b {
+        /*visibility: hidden;*/
         display: block;
     }
     .mm img {
