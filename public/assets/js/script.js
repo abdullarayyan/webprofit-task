@@ -1,7 +1,7 @@
-var menu_a = document.querySelector('#menu-a');
-var menu_b = document.querySelector('#menu-b');
-var mm = document.querySelector('.mm');
-var content = document.querySelector('.content');
+let menu_a = document.querySelector('#menu-a');
+let menu_b = document.querySelector('#menu-b');
+let mm = document.querySelector('.mm');
+let content = document.querySelector('.content');
 
 
 menu_a.addEventListener('click', () => {
@@ -24,7 +24,7 @@ function showblock() {
 }
 
 //animation text
-var typed = new Typed(".typing",{
+let typed = new Typed(".typing",{
     strings:["Logitech's", "Canon's", "LJ Hooker's", "Bellamy's", "Nimble's"],
     typeSpeed:100,
     backSpeed:60,
