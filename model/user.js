@@ -10,9 +10,18 @@ const UserSchema = new mongoose.Schema(
         company_website: {type: String},
         job_title: {type: String},
         employees: {type: String}
-    }, {collection: 'users'}
+    }, {collection: 'users'},
+)
+const UserSchema1 = new mongoose.Schema(
+    {
+        airport_code: {type: String},
+        name: {type: String},
+        city: {type: String},
+        state: {type: String}
+        
+    }, {collection: 'airport'}
 )
 
-const model = mongoose.model('UserSchema', UserSchema)
 
-model.exports = model
+module.exports = mongoose.model('users', UserSchema);
+module.exports = mongoose.model('airport', UserSchema1);

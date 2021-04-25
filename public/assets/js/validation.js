@@ -29,6 +29,7 @@ fields_validations.company_website = new RegExp('^(https?:\\/\\/)?' + // protoco
 form.addEventListener("blur", function (event) {
     let regex = (fields_validations[event.target.id].test(event.target.value))
     // console.log(re)
+    // console.log(event.target.value)
     if (Object.is(regex, false)) {
         event.target.className = ('not-valid')
     } else {
@@ -39,24 +40,34 @@ form.addEventListener("blur", function (event) {
 const user = [first_name, last_name, email, phone_number, company_name, company_website, job_title, employees] //array of all field form
 const btn = document.getElementById('submit');
 btn.addEventListener('click', (registerUser) => {//onclick button submit
+    const first = first_name.value
+    const second_name = last_name.value
+    const mail = email.value
+    const phone = phone_number.value
+    const company = company_name.value
+    const companysite = company_website.value
+    const job = job_title.value
+    const emp = employees.value
     user.forEach(async function (item) {//foreach of all field
         // console.log(item.value)
-        const inputValue = item.value    //give a default value at all element
+        const inputValue = item.value
+        
         if (inputValue === '') {
             item.classList.add('not-valid')
-        } else if (inputValue === 'disabled selected') {
+        } else if (item.value === 'disabled selected') {
             item.classList.add('not-valid-select')
         }
+        
         const result = await fetch('/api/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                inputValue
+                first, second_name, mail, phone, company, companysite, job, emp
             })
         }).then((res) => res.json())
-        console.log(result + "hhhh")
+        console.log(result)
     });
 });
 
